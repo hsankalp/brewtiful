@@ -1,18 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/Brewery.css";
 
-const Brewery = props => {
-  const [brewery, setBrewery] = useState(null);
-  const { id } = props.brewery;
-
-  useEffect(() => {
-    fetch(`https://api.openbrewerydb.org/breweries/${id}`)
-      .then(resp => resp.json())
-      .then(data => setBrewery(data));
-  }, [id]);
-
+const Brewery = ({ brewery, index }) => {
   const randomNumber = Math.floor(Math.random() * 200);
-
   return (
     <>
       {brewery && (
@@ -26,7 +16,7 @@ const Brewery = props => {
             </div>
             <div className="col-lg-9 col-sm-12">
               <h4>
-                {props.index + 1}. {brewery.name}
+                {index + 1}. {brewery.name}
               </h4>
               <p>
                 {brewery.brewery_type.replace(

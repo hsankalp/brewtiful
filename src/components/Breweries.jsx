@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Brewery from "./Brewery";
 
-const Breweries = () => {
+const Breweries = ({ city }) => {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.openbrewerydb.org/breweries")
+    fetch(`https://api.openbrewerydb.org/breweries/?by_city=${city}`)
       .then(resp => resp.json())
       .then(data => {
         setBreweries(data);

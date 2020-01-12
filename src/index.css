@@ -30,3 +30,11 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #10181d;
 }
+
+.btn {
+  border-radius: 0px !important;
+}
+
+.form-control {
+  border-radius: 0px !important;
+}

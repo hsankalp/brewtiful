@@ -1,0 +1,5 @@
+.breweries {
+  padding: 0px 30px !important;
+  height: 100vh;
+  overflow-y: auto;
+}

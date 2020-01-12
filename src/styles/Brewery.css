@@ -3,3 +3,10 @@
   margin: 20px 0px;
   padding: 20px;
 }
+
+/* Smmall Screen */
+@media (max-width: 1023px) {
+  .location-button {
+    display: none !important;
+  }
+}

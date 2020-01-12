@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Brewery from "./Brewery";
 import "../styles/Breweries.css";
 
-const Breweries = ({ name, city }) => {
+const Breweries = ({ name, city, onSelect }) => {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
@@ -15,11 +15,20 @@ const Breweries = ({ name, city }) => {
       });
   }, [name, city]);
 
+  const handleSelect = (location, name) => {
+    onSelect(location, name);
+  };
+
   return (
     <>
       {breweries.length !== 0 ? (
         breweries.map((brewery, idx) => (
-          <Brewery key={brewery.id} index={idx} brewery={brewery} />
+          <Brewery
+            key={brewery.id}
+            index={idx}
+            brewery={brewery}
+            onSelect={handleSelect}
+          />
         ))
       ) : (
         <h5 className="error-message">{`No Results for ${name} ${city}`}</h5>

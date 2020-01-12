@@ -1,0 +1,11 @@
+#map {
+  width: 70vw;
+  height: 100vh;
+}
+
+/* Small Screen */
+@media (max-width: 1023px) {
+  #map {
+    display: none !important;
+  }
+}

@@ -7,8 +7,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
 
-const Brewery = ({ brewery, index }) => {
+const Brewery = ({ brewery, index, onSelect }) => {
   const randomNumber = Math.floor(Math.random() * 200);
+
+  const handleClick = brewery => {
+    if (brewery.latitude && brewery.longitude) {
+      onSelect([brewery.latitude, brewery.longitude]);
+    } else {
+      alert(`Location not available for ${brewery.name}`);
+    }
+  };
+
   return (
     <>
       {brewery && (
@@ -16,14 +25,14 @@ const Brewery = ({ brewery, index }) => {
           <div className="d-flex flex-wrap">
             <div className="flex-item p-2">
               <img
-                src={`https://picsum.photos/id/${randomNumber}/250/250`}
+                src={`https://picsum.photos/id/${randomNumber}/200/200`}
                 alt="beer"
               ></img>
             </div>
             <div className="flex-item p-2">
-              <h4>
+              <h5 className="brewery-name">
                 {index + 1}. {brewery.name}
-              </h4>
+              </h5>
               <p>
                 {brewery.brewery_type.replace(
                   brewery.brewery_type.charAt(0),
@@ -47,6 +56,24 @@ const Brewery = ({ brewery, index }) => {
                 )}{" "}
                 <a href={brewery.website_url}>{brewery.website_url}</a>
               </p>
+              {brewery.latitude && brewery.longitude && (
+                <button
+                  className="btn btn-sm btn-dark location-button"
+                  onClick={() => handleClick(brewery)}
+                >
+                  Location
+                </button>
+              )}
+              {brewery.latitude && brewery.longitude && (
+                <a
+                  href={`https://www.google.com/maps/place/${brewery.latitude},${brewery.longitude}`}
+                  className="btn btn-sm btn-dark m-3 directions-button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Directions
+                </a>
+              )}
             </div>
           </div>
         </div>

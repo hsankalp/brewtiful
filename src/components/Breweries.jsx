@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Brewery from "./Brewery";
 import "../styles/Breweries.css";
+import { properties } from "../properties";
 
 const Breweries = ({ name, city, onSelect }) => {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
-    const url = `https://api.openbrewerydb.org/breweries?by_name=${name}&by_city=${city}`;
+    const url = `${properties.breweryUrl}?by_name=${name}&by_city=${city}`;
     console.log(`fetching data from ${url}`);
     fetch(url)
       .then(resp => resp.json())

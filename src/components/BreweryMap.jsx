@@ -3,21 +3,19 @@ import L from "leaflet";
 import "../styles/BreweryMap.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
+import { properties } from "../properties";
 
 const BreweryMap = ({ position }) => {
   useEffect(() => {
     const map = L.map("map", {
-      center: position,
+      center: position || properties.defaultPosition,
       zoom: 17,
       zoomControl: false
     });
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-      {
-        maxZoom: 19
-      }
-    ).addTo(map);
-    L.marker(position).addTo(map);
+    L.tileLayer(properties.tileLayer, {
+      maxZoom: 19
+    }).addTo(map);
+    position && L.marker(position).addTo(map);
     return () => {
       map.remove();
     };

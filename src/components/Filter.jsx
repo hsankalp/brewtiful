@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Filters.css";
+import { properties } from "../properties";
 
 const Filter = () => {
   return (

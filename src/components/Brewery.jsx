@@ -1,4 +1,10 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faExternalLinkAlt,
+  faMapMarkerAlt,
+  faPhoneAlt
+} from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
 
 const Brewery = ({ brewery, index }) => {
@@ -6,11 +12,11 @@ const Brewery = ({ brewery, index }) => {
   return (
     <>
       {brewery && (
-        <div className="card">
+        <div className="card brewery-card">
           <div className="d-flex flex-wrap">
             <div className="flex-item p-2">
               <img
-                src={`https://picsum.photos/id/${randomNumber}/200/200`}
+                src={`https://picsum.photos/id/${randomNumber}/250/250`}
                 alt="beer"
               ></img>
             </div>
@@ -26,12 +32,20 @@ const Brewery = ({ brewery, index }) => {
                 brewery
               </p>
               <p>
-                Location: {brewery.street}, {brewery.city}, {brewery.state} -
+                <FontAwesomeIcon icon={faMapMarkerAlt} /> {brewery.street}
+                <br></br>
+                {brewery.city}, {brewery.state}
+                <br></br>
                 {brewery.postal_code}
               </p>
-              <p>Phone: {brewery.phone}</p>
               <p>
-                Website <a href={brewery.website_url}>{brewery.website_url}</a>
+                <FontAwesomeIcon icon={faPhoneAlt} /> {brewery.phone}
+              </p>
+              <p>
+                {brewery.website_url && (
+                  <FontAwesomeIcon icon={faExternalLinkAlt} />
+                )}{" "}
+                <a href={brewery.website_url}>{brewery.website_url}</a>
               </p>
             </div>
           </div>

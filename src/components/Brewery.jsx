@@ -7,14 +7,14 @@ const Brewery = ({ brewery, index }) => {
     <>
       {brewery && (
         <div className="card">
-          <div className="row">
-            <div className="col-lg-3 col-sm-12 mb-4">
+          <div className="d-flex flex-wrap">
+            <div className="flex-item p-2">
               <img
                 src={`https://picsum.photos/id/${randomNumber}/200/200`}
                 alt="beer"
               ></img>
             </div>
-            <div className="col-lg-9 col-sm-12">
+            <div className="flex-item p-2">
               <h4>
                 {index + 1}. {brewery.name}
               </h4>

@@ -48,7 +48,9 @@ const Brewery = ({ brewery, index, onSelect }) => {
                 {brewery.postal_code}
               </p>
               <p>
-                <FontAwesomeIcon icon={faPhoneAlt} /> {brewery.phone}
+                <a href={`tel:${brewery.phone}`}>
+                  <FontAwesomeIcon icon={faPhoneAlt} /> {brewery.phone}
+                </a>
               </p>
               <p>
                 {brewery.website_url && (

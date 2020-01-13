@@ -6,6 +6,7 @@ import {
   faPhoneAlt
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
+import { capitalizeFirstLetter } from "../capitalizeFirstLetter";
 
 const Brewery = ({ brewery, index, onSelect }) => {
   const randomNumber = Math.floor(Math.random() * 200);
@@ -33,13 +34,7 @@ const Brewery = ({ brewery, index, onSelect }) => {
               <h5 className="brewery-name">
                 {index + 1}. {brewery.name}
               </h5>
-              <p>
-                {brewery.brewery_type.replace(
-                  brewery.brewery_type.charAt(0),
-                  brewery.brewery_type.charAt(0).toUpperCase()
-                )}{" "}
-                brewery
-              </p>
+              <p>{capitalizeFirstLetter(brewery.brewery_type)} brewery</p>
               <p>
                 <FontAwesomeIcon icon={faMapMarkerAlt} /> {brewery.street}
                 <br></br>

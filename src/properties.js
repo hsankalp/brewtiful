@@ -5,6 +5,7 @@ export const properties = {
   defaultCity: "Ann Arbor",
   defaultPosition: [42.25362, -83.7343],
   breweryTypes: [
+    "all",
     "micro",
     "regional",
     "brewpub",

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Search.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Search = props => {
   const [name, setName] = useState("");
@@ -41,7 +43,8 @@ const Search = props => {
         </div>
         <div>
           <button type="submit" className="btn btn-dark search-button">
-            Search
+            <FontAwesomeIcon icon={faSearch} />{" "}
+            <span className="search-button-text">Search</span>
           </button>
         </div>
       </form>

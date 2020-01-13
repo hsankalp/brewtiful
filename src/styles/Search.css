@@ -18,6 +18,9 @@
   #brewery-location {
     border-left: 0px !important;
   }
+  .search-button-text {
+    display: none;
+  }
 }
 
 /* Small Screens */

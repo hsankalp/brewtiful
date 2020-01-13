@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExternalLinkAlt,
   faMapMarkerAlt,
-  faPhoneAlt
+  faPhoneAlt,
+  faDirections,
+  faCompass
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
 import { capitalizeFirstLetter } from "../capitalizeFirstLetter";
@@ -42,11 +44,13 @@ const Brewery = ({ brewery, index, onSelect }) => {
                 <br></br>
                 {brewery.postal_code}
               </p>
-              <p>
-                <a href={`tel:${brewery.phone}`}>
-                  <FontAwesomeIcon icon={faPhoneAlt} /> {brewery.phone}
-                </a>
-              </p>
+              {brewery.phone && (
+                <p>
+                  <a href={`tel:${brewery.phone}`}>
+                    <FontAwesomeIcon icon={faPhoneAlt} /> {brewery.phone}
+                  </a>
+                </p>
+              )}
               <p>
                 {brewery.website_url && (
                   <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -58,7 +62,7 @@ const Brewery = ({ brewery, index, onSelect }) => {
                   className="btn btn-sm btn-dark location-button"
                   onClick={() => handleClick(brewery)}
                 >
-                  Location
+                  <FontAwesomeIcon icon={faCompass} /> Location
                 </button>
               )}
               {brewery.latitude && brewery.longitude && (
@@ -68,7 +72,7 @@ const Brewery = ({ brewery, index, onSelect }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get Directions
+                  <FontAwesomeIcon icon={faDirections} /> Get Directions
                 </a>
               )}
             </div>

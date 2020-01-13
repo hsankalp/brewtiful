@@ -1,4 +1,4 @@
-# React application to find a breweries
+# React application to find breweries
 
 Can be accessed at https://hsankalp.github.io/brewtiful
 

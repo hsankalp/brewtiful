@@ -41,8 +41,8 @@ const Search = props => {
             onChange={handleLocationChange}
           />
         </div>
-        <div>
-          <button type="submit" className="btn btn-dark search-button">
+        <div className="search-button">
+          <button type="submit" className="btn btn-dark">
             <FontAwesomeIcon icon={faSearch} />{" "}
             <span className="search-button-text">Search</span>
           </button>

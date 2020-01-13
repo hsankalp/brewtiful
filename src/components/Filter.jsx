@@ -20,9 +20,11 @@ const Filter = ({ onFilter }) => {
 
   return (
     <>
-      <button className="btn btn-dark filter-button" onClick={handleClick}>
-        <FontAwesomeIcon icon={faFilter} /> Filter
-      </button>
+      <div className="filter-button">
+        <button className="btn btn-dark" onClick={handleClick}>
+          <FontAwesomeIcon icon={faFilter} /> Filter
+        </button>
+      </div>
       {filterCard && (
         <div className="filter-card d-flex flex-wrap">
           {properties.breweryTypes.map(type => (

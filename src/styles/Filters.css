@@ -11,3 +11,10 @@
 .filter-button {
   margin-top: 10px;
 }
+
+/* Small Screens */
+@media (max-width: 1100px) {
+  .filter-button {
+    display: grid;
+  }
+}

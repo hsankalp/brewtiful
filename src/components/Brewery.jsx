@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExternalLinkAlt,
@@ -8,12 +8,15 @@ import {
   faCompass
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
-import { capitalizeFirstLetter } from "../capitalizeFirstLetter";
+import { capitalizeFirstLetter } from "../utility";
+import { LocationContext } from "../context/LocationContext";
 
 const Brewery = ({ brewery, index, onSelect }) => {
   const [imageUrl] = useState(
     `https://picsum.photos/id/${Math.floor(Math.random() * 200)}/200/200`
   );
+
+  const { setBrewery } = useContext(LocationContext);
 
   return (
     <>
@@ -51,7 +54,7 @@ const Brewery = ({ brewery, index, onSelect }) => {
               {brewery.latitude && brewery.longitude && (
                 <button
                   className="btn btn-sm btn-dark location-button"
-                  onClick={() => onSelect(brewery)}
+                  onClick={() => setBrewery(brewery)}
                 >
                   <FontAwesomeIcon icon={faCompass} /> Location
                 </button>

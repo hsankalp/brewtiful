@@ -3,7 +3,7 @@ import Brewery from "./Brewery";
 import "../styles/Breweries.css";
 import { getBreweries } from "../API/BreweriesAPI";
 
-const Breweries = ({ name, city, filter, onSelect }) => {
+const Breweries = ({ name, city, filter }) => {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
@@ -17,12 +17,7 @@ const Breweries = ({ name, city, filter, onSelect }) => {
     <>
       {breweries.length !== 0 ? (
         breweries.map((brewery, idx) => (
-          <Brewery
-            key={brewery.id}
-            index={idx}
-            brewery={brewery}
-            onSelect={onSelect}
-          />
+          <Brewery key={brewery.id} index={idx} brewery={brewery} />
         ))
       ) : (
         <h5 className="error-message">{`No Results for ${name} ${city} ${filter}`}</h5>

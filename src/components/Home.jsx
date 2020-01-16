@@ -5,6 +5,7 @@ import Search from "./Search";
 import BreweryMap from "./BreweryMap";
 import { properties } from "../properties";
 import Filter from "./Filter";
+import { LocationContext } from "../context/LocationContext";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -17,29 +18,22 @@ const Home = () => {
     setLocation(location);
   };
 
-  const handleSelect = brewery => {
-    setBrewery(brewery);
-  };
-
   const handleFilter = type => {
     setFilter(type);
   };
 
   return (
     <div className="row">
-      <div className="col-lg-5 col-sm-12 breweries">
-        <Search onSearch={handleSearch} />
-        <Filter onFilter={handleFilter} />
-        <Breweries
-          name={name}
-          city={location}
-          filter={filter}
-          onSelect={handleSelect}
-        />
-      </div>
-      <div className="col-lg-7 col-sm-12">
-        <BreweryMap brewery={brewery} />
-      </div>
+      <LocationContext.Provider value={{ brewery, setBrewery }}>
+        <div className="col-lg-5 col-sm-12 breweries">
+          <Search onSearch={handleSearch} />
+          <Filter onFilter={handleFilter} />
+          <Breweries name={name} city={location} filter={filter} />
+        </div>
+        <div className="col-lg-7 col-sm-12">
+          <BreweryMap />
+        </div>
+      </LocationContext.Provider>
     </div>
   );
 };

@@ -3,18 +3,20 @@
 Can be accessed at https://hsankalp.github.io/brewtiful
 
 ## Tools used:
-* JavaScript
-* ReactJS
-* Bootstrap: For design
-* OpenBreweryDB (https://www.openbrewerydb.org): For the brewery data
-* Leaflet (https://leafletjs.com/): To display the map and location
-* Picsum (https://picsum.photos): For random images
+
+- JavaScript
+- ReactJS
+- Bootstrap: For design
+- OpenBreweryDB (https://www.openbrewerydb.org): For the brewery data
+- Leaflet (https://leafletjs.com/): To display the map and location
+- Picsum (https://picsum.photos): For random images
 
 ## To Do:
-* Implement Infinite Scroll
-* Configure React Context Hook for State Management instead of bubbling up the state
-* Additional Filters
-* Do something with Tags in the api response
+
+- Implement Infinite Scroll
+- Loader and Error Handling
+- Additional Filters
+- Do something with Tags in the api response
 
 ## Sample API Response Structure:
 

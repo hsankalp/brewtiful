@@ -3,7 +3,7 @@ import "../styles/Filters.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { properties } from "../properties";
-import { capitalizeFirstLetter } from "../capitalizeFirstLetter";
+import { capitalizeFirstLetter } from "../utility";
 
 const Filter = ({ onFilter }) => {
   const [filterCard, setFilterCard] = useState(false);

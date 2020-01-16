@@ -9,14 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
 import { capitalizeFirstLetter } from "../utility";
-import { LocationContext } from "../context/LocationContext";
+import { BreweryContext } from "../context/BreweryContext";
 
 const Brewery = ({ brewery, index, onSelect }) => {
   const [imageUrl] = useState(
     `https://picsum.photos/id/${Math.floor(Math.random() * 200)}/200/200`
   );
 
-  const { setBrewery } = useContext(LocationContext);
+  const { setBrewery } = useContext(BreweryContext);
 
   return (
     <>

@@ -4,10 +4,10 @@ import "../styles/BreweryMap.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
 import { properties } from "../properties";
-import { LocationContext } from "../context/LocationContext";
+import { BreweryContext } from "../context/BreweryContext";
 
 const BreweryMap = () => {
-  const { brewery } = useContext(LocationContext);
+  const { brewery } = useContext(BreweryContext);
   useEffect(() => {
     const map = L.map("map", {
       center: brewery

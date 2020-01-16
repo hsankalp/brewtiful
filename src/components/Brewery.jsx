@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExternalLinkAlt,
@@ -11,15 +11,9 @@ import "../styles/Brewery.css";
 import { capitalizeFirstLetter } from "../capitalizeFirstLetter";
 
 const Brewery = ({ brewery, index, onSelect }) => {
-  const randomNumber = Math.floor(Math.random() * 200);
-
-  const handleClick = brewery => {
-    if (brewery.latitude && brewery.longitude) {
-      onSelect([brewery.latitude, brewery.longitude]);
-    } else {
-      alert(`Location not available for ${brewery.name}`);
-    }
-  };
+  const [imageUrl] = useState(
+    `https://picsum.photos/id/${Math.floor(Math.random() * 200)}/200/200`
+  );
 
   return (
     <>
@@ -27,10 +21,7 @@ const Brewery = ({ brewery, index, onSelect }) => {
         <div className="card brewery-card">
           <div className="d-flex flex-wrap">
             <div className="flex-item p-2">
-              <img
-                src={`https://picsum.photos/id/${randomNumber}/200/200`}
-                alt="beer"
-              ></img>
+              <img src={imageUrl} alt="beer"></img>
             </div>
             <div className="flex-item p-2">
               <h5 className="brewery-name">
@@ -60,7 +51,7 @@ const Brewery = ({ brewery, index, onSelect }) => {
               {brewery.latitude && brewery.longitude && (
                 <button
                   className="btn btn-sm btn-dark location-button"
-                  onClick={() => handleClick(brewery)}
+                  onClick={() => onSelect(brewery)}
                 >
                   <FontAwesomeIcon icon={faCompass} /> Location
                 </button>

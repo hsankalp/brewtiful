@@ -5,21 +5,24 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import { properties } from "../properties";
 
-const BreweryMap = ({ position }) => {
+const BreweryMap = ({ brewery }) => {
   useEffect(() => {
     const map = L.map("map", {
-      center: position || properties.defaultPosition,
-      zoom: 17,
-      zoomControl: false
+      center: brewery
+        ? [brewery.latitude, brewery.longitude]
+        : properties.defaultPosition,
+      zoom: 17
     });
+
     L.tileLayer(properties.tileLayer, {
       maxZoom: 19
     }).addTo(map);
-    position && L.marker(position).addTo(map);
+
+    brewery && L.marker([brewery.latitude, brewery.longitude]).addTo(map);
     return () => {
       map.remove();
     };
-  }, [position]);
+  }, [brewery]);
 
   return <div id="map"></div>;
 };

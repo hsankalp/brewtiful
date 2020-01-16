@@ -1,28 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Brewery from "./Brewery";
 import "../styles/Breweries.css";
-import { properties } from "../properties";
+import { getBreweries } from "../API/BreweriesAPI";
 
 const Breweries = ({ name, city, filter, onSelect }) => {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
-    const url = `${
-      properties.breweryUrl
-    }?by_name=${name}&by_city=${city}&by_type=${
-      filter === "all" ? "" : filter
-    }&per_page=50`;
-    console.log(`fetching data from ${url}`);
-    fetch(url)
-      .then(resp => resp.json())
-      .then(data => {
-        setBreweries(data);
-      });
+    console.log("Fetching breweries ", name, city, filter);
+    getBreweries(name, city, filter)
+      .then(data => setBreweries(data))
+      .catch(err => alert(err));
   }, [name, city, filter]);
-
-  const handleSelect = (location, name) => {
-    onSelect(location, name);
-  };
 
   return (
     <>
@@ -32,7 +21,7 @@ const Breweries = ({ name, city, filter, onSelect }) => {
             key={brewery.id}
             index={idx}
             brewery={brewery}
-            onSelect={handleSelect}
+            onSelect={onSelect}
           />
         ))
       ) : (

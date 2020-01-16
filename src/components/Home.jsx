@@ -9,7 +9,7 @@ import Filter from "./Filter";
 const Home = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState(properties.defaultCity);
-  const [position, setPosition] = useState();
+  const [brewery, setBrewery] = useState();
   const [filter, setFilter] = useState("");
 
   const handleSearch = (name, location) => {
@@ -17,8 +17,8 @@ const Home = () => {
     setLocation(location);
   };
 
-  const handleSelect = location => {
-    setPosition(location);
+  const handleSelect = brewery => {
+    setBrewery(brewery);
   };
 
   const handleFilter = type => {
@@ -38,7 +38,7 @@ const Home = () => {
         />
       </div>
       <div className="col-lg-7 col-sm-12">
-        <BreweryMap position={position} />
+        <BreweryMap brewery={brewery} />
       </div>
     </div>
   );

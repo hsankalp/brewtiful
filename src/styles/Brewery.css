@@ -5,7 +5,7 @@
 }
 
 /* Smmall Screen */
-@media (max-width: 1023px) {
+@media (max-width: 990px) {
   .location-button {
     display: none !important;
   }

@@ -3,13 +3,12 @@ import "../styles/Home.css";
 import Breweries from "./Breweries";
 import Search from "./Search";
 import BreweryMap from "./BreweryMap";
-import { properties } from "../properties";
 import Filter from "./Filter";
 import { BreweryContext } from "../context/BreweryContext";
 
 const Home = () => {
   const [name, setName] = useState("");
-  const [location, setLocation] = useState(properties.defaultCity);
+  const [location, setLocation] = useState("");
   const [brewery, setBrewery] = useState();
   const [filter, setFilter] = useState("");
 

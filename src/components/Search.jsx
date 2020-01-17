@@ -3,13 +3,13 @@ import "../styles/Search.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Search = props => {
+const Search = ({ onSearch }) => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.onSearch(name, location);
+    onSearch(name, location);
   };
 
   const handleNameChange = e => {

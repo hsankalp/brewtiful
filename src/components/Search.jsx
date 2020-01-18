@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "../styles/Search.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 const Search = ({ onSearch }) => {
   const nameEl = useRef("");
   const locationEl = useRef("");
+
+  useEffect(() => {
+    nameEl.current.focus();
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -20,7 +24,7 @@ const Search = ({ onSearch }) => {
             type="text"
             className="form-control"
             id="brewery-name"
-            placeholder="&#xf0fc;  Search breweries"
+            placeholder="&#xf0fc;  Find breweries"
             ref={nameEl}
           />
         </div>
@@ -29,7 +33,7 @@ const Search = ({ onSearch }) => {
             type="text"
             className="form-control"
             id="brewery-location"
-            placeholder="&#xf041;  Search by city"
+            placeholder="&#xf041;  in your city"
             ref={locationEl}
           />
         </div>

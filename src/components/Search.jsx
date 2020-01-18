@@ -1,23 +1,15 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import "../styles/Search.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Search = ({ onSearch }) => {
-  const [name, setName] = useState("");
-  const [location, setLocation] = useState("");
+  const nameEl = useRef("");
+  const locationEl = useRef("");
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSearch(name, location);
-  };
-
-  const handleNameChange = e => {
-    setName(e.target.value);
-  };
-
-  const handleLocationChange = e => {
-    setLocation(e.target.value);
+    onSearch(nameEl.current.value, locationEl.current.value);
   };
 
   return (
@@ -29,7 +21,7 @@ const Search = ({ onSearch }) => {
             className="form-control"
             id="brewery-name"
             placeholder="&#xf0fc;  Search breweries"
-            onChange={handleNameChange}
+            ref={nameEl}
           />
         </div>
         <div className="search-item">
@@ -38,7 +30,7 @@ const Search = ({ onSearch }) => {
             className="form-control"
             id="brewery-location"
             placeholder="&#xf041;  Search by city"
-            onChange={handleLocationChange}
+            ref={locationEl}
           />
         </div>
         <div className="search-button">

@@ -1,29 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Brewery from "./Brewery";
+import { useFetch } from "../hooks/FetchHook";
+import Loader from "./Loader";
+import ErrorMessage from "./ErrorMessage";
+import { properties } from "../properties";
 import "../styles/Breweries.css";
-import { getBreweries } from "../API/BreweriesAPI";
 
 const Breweries = ({ name, city, filter }) => {
-  const [breweries, setBreweries] = useState([]);
+  const filterToApply = filter === "all" ? "" : filter;
+  const url = `${properties.breweryUrl}?by_name=${name}&by_city=${city}&by_type=${filterToApply}&per_page=20`;
 
-  useEffect(() => {
-    console.log("Fetching breweries ", name, city, filter);
-    getBreweries(name, city, filter)
-      .then(data => setBreweries(data))
-      .catch(err => alert(err));
-  }, [name, city, filter]);
+  const [data, isLoading, error] = useFetch(url);
 
-  return (
-    <>
-      {breweries.length !== 0 ? (
-        breweries.map((brewery, idx) => (
+  if (isLoading) return <Loader />;
+
+  if (error) return <ErrorMessage />;
+
+  const getBreweries = breweries => {
+    if (breweries) {
+      if (breweries.length !== 0)
+        return breweries.map((brewery, idx) => (
           <Brewery key={brewery.id} index={idx} brewery={brewery} />
-        ))
-      ) : (
-        <h5 className="error-message">{`No Results for ${name} ${city} ${filter}`}</h5>
-      )}
-    </>
-  );
+        ));
+      else
+        return (
+          <div className="no-results-message">
+            <h5>
+              No results for {name} {city} {filter}
+            </h5>
+          </div>
+        );
+    }
+  };
+
+  return <>{getBreweries(data)}</>;
 };
 
 export default Breweries;

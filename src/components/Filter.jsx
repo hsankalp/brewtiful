@@ -6,7 +6,7 @@ import { properties } from "../properties";
 import { capitalizeFirstLetter } from "../utility";
 
 const Filter = ({ onFilter }) => {
-  const [filterCard, setFilterCard] = useState(false);
+  const [showFilterCard, setShowFilterCard] = useState(false);
   const [selected, setSelected] = useState(properties.breweryTypes[0]);
 
   const handleChange = e => {
@@ -15,7 +15,7 @@ const Filter = ({ onFilter }) => {
   };
 
   const handleClick = () => {
-    setFilterCard(!filterCard);
+    setShowFilterCard(!showFilterCard);
   };
 
   return (
@@ -25,7 +25,7 @@ const Filter = ({ onFilter }) => {
           <FontAwesomeIcon icon={faFilter} /> Filter
         </button>
       </div>
-      {filterCard && (
+      {showFilterCard && (
         <div className="filter-card d-flex flex-wrap">
           {properties.breweryTypes.map(type => (
             <div className="flex-item radio-item" key={type}>

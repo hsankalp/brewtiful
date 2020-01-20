@@ -11,7 +11,7 @@ import "../styles/Brewery.css";
 import { capitalizeFirstLetter } from "../utility";
 import { BreweryContext } from "../context/BreweryContext";
 
-const Brewery = ({ brewery, index, onSelect }) => {
+const Brewery = ({ brewery, index }) => {
   const [imageUrl] = useState(
     `https://picsum.photos/id/${Math.floor(Math.random() * 200)}/200/200`
   );

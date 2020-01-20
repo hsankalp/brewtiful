@@ -8,6 +8,7 @@ import { BreweryContext } from "../context/BreweryContext";
 
 const BreweryMap = () => {
   const { brewery } = useContext(BreweryContext);
+
   useEffect(() => {
     const map = L.map("map", {
       center: brewery

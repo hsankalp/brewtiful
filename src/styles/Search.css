@@ -21,7 +21,7 @@
   .search-button-text {
     display: none;
   }
-  .search-button {
+  .search-button .btn-dark {
     border-radius: 0px !important;
   }
 }

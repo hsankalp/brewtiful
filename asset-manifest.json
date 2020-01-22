@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/brewtiful/static/css/main.ca0477ef.chunk.css",
+    "main.css": "/brewtiful/static/css/main.2d3d7ad5.chunk.css",
     "main.js": "/brewtiful/static/js/main.78adf68a.chunk.js",
     "main.js.map": "/brewtiful/static/js/main.78adf68a.chunk.js.map",
     "runtime-main.js": "/brewtiful/static/js/runtime-main.091e8359.js",
@@ -9,17 +9,17 @@
     "static/js/2.af318407.chunk.js": "/brewtiful/static/js/2.af318407.chunk.js",
     "static/js/2.af318407.chunk.js.map": "/brewtiful/static/js/2.af318407.chunk.js.map",
     "index.html": "/brewtiful/index.html",
-    "precache-manifest.b85797f920a106e3994b23f51d317707.js": "/brewtiful/precache-manifest.b85797f920a106e3994b23f51d317707.js",
+    "precache-manifest.75a3558919178b345a9d8533e374e901.js": "/brewtiful/precache-manifest.75a3558919178b345a9d8533e374e901.js",
     "service-worker.js": "/brewtiful/service-worker.js",
     "static/css/2.3edd7c7a.chunk.css.map": "/brewtiful/static/css/2.3edd7c7a.chunk.css.map",
-    "static/css/main.ca0477ef.chunk.css.map": "/brewtiful/static/css/main.ca0477ef.chunk.css.map",
+    "static/css/main.2d3d7ad5.chunk.css.map": "/brewtiful/static/css/main.2d3d7ad5.chunk.css.map",
     "static/js/2.af318407.chunk.js.LICENSE": "/brewtiful/static/js/2.af318407.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.091e8359.js",
     "static/css/2.3edd7c7a.chunk.css",
     "static/js/2.af318407.chunk.js",
-    "static/css/main.ca0477ef.chunk.css",
+    "static/css/main.2d3d7ad5.chunk.css",
     "static/js/main.78adf68a.chunk.js"
   ]
 }

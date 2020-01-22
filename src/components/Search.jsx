@@ -33,12 +33,12 @@ const Search = ({ onSearch }) => {
             type="text"
             className="form-control"
             id="brewery-location"
-            placeholder="&#xf041;  in your city"
+            placeholder="&#xf041;  by city"
             ref={locationRef}
           />
         </div>
         <div className="search-button">
-          <button type="submit" className="btn btn-dark">
+          <button type="submit" className="btn btn-dark search-button">
             <FontAwesomeIcon icon={faSearch} />{" "}
             <span className="search-button-text">Search</span>
           </button>

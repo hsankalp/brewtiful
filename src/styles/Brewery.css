@@ -1,12 +1,22 @@
 .brewery-card {
   max-width: 100%;
   margin: 20px 0px;
-  padding: 20px;
+  padding: 20px 20px 15px 20px;
+}
+
+.brewery-card-section {
+  display: flex;
+}
+
+.brewery-buttons-section {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Smmall Screen */
-@media (max-width: 990px) {
-  .location-button {
-    display: none !important;
+@media (max-width: 900px) {
+  .brewery-card-section {
+    flex-wrap: wrap;
   }
 }

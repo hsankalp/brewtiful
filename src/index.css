@@ -13,26 +13,7 @@ code {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: lightgray;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #18252c;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #10181d;
-}
-
-.btn {
-  border-radius: 0px !important;
+  width: 0px;
 }
 
 .form-control {

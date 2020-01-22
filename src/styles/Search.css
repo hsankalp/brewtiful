@@ -13,10 +13,6 @@
   flex: 1;
 }
 
-.search-button {
-  border-radius: 0px !important;
-}
-
 /* Large Screens */
 @media (min-width: 1100px) {
   #brewery-location {
@@ -24,6 +20,9 @@
   }
   .search-button-text {
     display: none;
+  }
+  .search-button {
+    border-radius: 0px !important;
   }
 }
 
@@ -39,5 +38,8 @@
   .search-button {
     margin-top: 10px;
     display: grid;
+  }
+  .search-button-text {
+    padding-left: 5px;
   }
 }

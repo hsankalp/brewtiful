@@ -19,4 +19,8 @@
   .brewery-card-section {
     flex-wrap: wrap;
   }
+  .brewery-location a {
+    color: black;
+    pointer-events: none;
+  }
 }

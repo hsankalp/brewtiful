@@ -39,7 +39,7 @@ const Search = ({ onSearch }) => {
         </div>
         <div className="search-button">
           <button type="submit" className="btn btn-dark search-button">
-            <FontAwesomeIcon icon={faSearch} />{" "}
+            <FontAwesomeIcon icon={faSearch} />
             <span className="search-button-text">Search</span>
           </button>
         </div>

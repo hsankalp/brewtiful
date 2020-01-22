@@ -57,7 +57,7 @@ const Brewery = ({ brewery, index }) => {
               )}
 
               {brewery.city && (
-                <div className="d-flex">
+                <div className="d-flex brewery-location">
                   <div className="flex-item p-1">
                     <FontAwesomeIcon icon={faMapMarkerAlt} />
                   </div>
@@ -75,12 +75,14 @@ const Brewery = ({ brewery, index }) => {
 
               <div className="brewery-buttons-section">
                 {brewery.website_url && (
-                  <button
+                  <a
                     className="btn btn-sm btn-dark m-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={brewery.website_url}
                   >
                     Website
-                  </button>
+                  </a>
                 )}
 
                 {brewery.latitude && brewery.longitude && (

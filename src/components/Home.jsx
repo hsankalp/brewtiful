@@ -22,8 +22,8 @@ const Home = () => {
   };
 
   return (
-    <div className="row">
-      <BreweryContext.Provider value={{ brewery, setBrewery }}>
+    <BreweryContext.Provider value={{ brewery, setBrewery }}>
+      <div className="row">
         <div className="col-lg-5 col-sm-12 col-md-12 breweries">
           <Search onSearch={handleSearch} />
           <Filter onFilter={handleFilter} />
@@ -32,8 +32,8 @@ const Home = () => {
         <div className="col-lg-7 col-sm-12 col-md-12">
           <BreweryMap />
         </div>
-      </BreweryContext.Provider>
-    </div>
+      </div>
+    </BreweryContext.Provider>
   );
 };
 

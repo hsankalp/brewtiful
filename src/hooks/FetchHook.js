@@ -7,7 +7,6 @@ export const useFetch = (url, dependencies) => {
 
   useEffect(() => {
     setIsLoading(true);
-    console.log("Fetching data");
     fetch(url)
       .then(resp => {
         if (!resp.ok) {

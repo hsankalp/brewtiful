@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
-import { capitalizeFirstLetter } from "../utility";
+import { capitalizeFirstLetter } from "../helper/utility";
 import { BreweryContext } from "../context/BreweryContext";
 import defaultImg from "../images/default-image.jpg";
 

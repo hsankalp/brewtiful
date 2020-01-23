@@ -25,7 +25,7 @@ http://hsankalp.github.io/brewtiful
 
 ## Topics Covered
 
-- React Hooks (useState, useEffect, useContext)
+- React Hooks (useState, useEffect, useRef, useContext)
 - Custom React Hooks (useFetch) for reusability
 - Context API for global state management
 - Responsive

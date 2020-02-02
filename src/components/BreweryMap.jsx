@@ -4,7 +4,7 @@ import "../styles/BreweryMap.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
 import { properties } from "../properties";
-import { BreweryContext } from "../context/BreweryContext";
+import { BreweryContext } from "../context/Context";
 
 const BreweryMap = () => {
   const { brewery } = useContext(BreweryContext);

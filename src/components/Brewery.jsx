@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
 import { capitalizeFirstLetter } from "../helper/utility";
-import { BreweryContext } from "../context/BreweryContext";
+import { BreweryContext } from "../context/Context";
 import defaultImg from "../images/default-image.jpg";
 
 const Brewery = ({ brewery, index }) => {

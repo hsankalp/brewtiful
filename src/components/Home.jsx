@@ -4,12 +4,11 @@ import Breweries from "./Breweries";
 import Search from "./Search";
 import BreweryMap from "./BreweryMap";
 import Filter from "./Filter";
-import { BreweryContext } from "../context/BreweryContext";
+import BreweryProvider from "../context/BreweryProvider";
 
 const Home = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
-  const [brewery, setBrewery] = useState();
   const [filter, setFilter] = useState("");
 
   const handleSearch = (name, location) => {
@@ -22,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <BreweryContext.Provider value={{ brewery, setBrewery }}>
+    <BreweryProvider>
       <div className="row">
         <div className="col-lg-5 col-sm-12 col-md-12 breweries">
           <Search onSearch={handleSearch} />
@@ -33,7 +32,7 @@ const Home = () => {
           <BreweryMap />
         </div>
       </div>
-    </BreweryContext.Provider>
+    </BreweryProvider>
   );
 };
 

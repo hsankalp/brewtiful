@@ -1,21 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Brewery.css";
 import { capitalizeFirstLetter } from "../helper/utility";
 import { BreweryContext } from "../context/Context";
-import defaultImg from "../images/default-image.jpg";
+import BreweryImage from "./BreweryImage";
 
 const Brewery = ({ brewery, index }) => {
-  const [imageUrl, setImageUrl] = useState(
-    `https://picsum.photos/id/${Math.floor(Math.random() * 200)}/200/200`
-  );
-
   const { setBrewery } = useContext(BreweryContext);
-
-  const setDefaultImg = () => {
-    setImageUrl(defaultImg);
-  };
 
   return (
     <>
@@ -23,7 +15,7 @@ const Brewery = ({ brewery, index }) => {
         <div className="card brewery-card">
           <div className="brewery-card-section">
             <div className="p-2">
-              <img src={imageUrl} alt="beer" onError={setDefaultImg}></img>
+              <BreweryImage id={brewery.id} />
             </div>
             <div className="p-2">
               <div className="d-flex">

@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <BreweryProvider>
-      <div className="row">
+      <div className="row m-1">
         <div className="col-lg-6 col-sm-12 breweries">
           <Search onSearch={handleSearch} />
           <Filter onFilter={handleFilter} />

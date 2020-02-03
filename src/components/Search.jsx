@@ -1,47 +1,42 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import "../styles/Search.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useFetch } from "../hooks/FetchHook";
 import { useDebounce } from "../hooks/DebounceHook";
 import { properties } from "../properties";
+import { useEffect } from "react";
 
 const Search = ({ onSearch }) => {
   const [name, setName] = useState("");
   const locationRef = useRef("");
-  const [suggestions, setSuggestions] = useState([]);
+  const nameRef = useRef("");
+  const [suggestions, setSuggestions] = useState();
 
-  const searchText = useDebounce(name, 500);
+  const searchText = useDebounce(name, 300);
+
+  let [data] = useFetch(
+    `${properties.breweryUrl}/autocomplete?query=${searchText}`,
+    searchText
+  );
 
   useEffect(() => {
-    fetch(`${properties.breweryUrl}/autocomplete?query=${searchText}`)
-      .then(resp => {
-        if (!resp.ok) {
-          throw Error(resp.statusText);
-        }
-        return resp.json();
-      })
-      .then(data => {
-        setSuggestions(data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, [searchText]);
+    setSuggestions(data);
+  }, [data]);
 
   const handleChange = e => {
     setName(e.target.value);
-    e.target.value.trim().length == 0 && setSuggestions([]);
   };
 
-  const handleSuggestionClick = suggestion => {
+  let handleSuggestionClick = suggestion => {
+    setSuggestions([]);
     onSearch(suggestion, locationRef.current.value);
-    setSuggestions([]);
   };
 
-  const handleSubmit = e => {
+  let handleSubmit = e => {
     e.preventDefault();
-    onSearch(name, locationRef.current.value);
     setSuggestions([]);
+    onSearch(nameRef.current.value, locationRef.current.value);
   };
 
   return (
@@ -54,8 +49,9 @@ const Search = ({ onSearch }) => {
           id="brewery-name"
           placeholder="&#xf0fc;  Find breweries"
           onChange={handleChange}
+          ref={nameRef}
         />
-        {suggestions.length !== 0 && (
+        {suggestions && suggestions.length !== 0 && (
           <ul className="suggestions">
             {suggestions.map(suggestion => (
               <li

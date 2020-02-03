@@ -1,6 +1,7 @@
 import React from "react";
 import Brewery from "./Brewery";
 import { useFetch } from "../hooks/FetchHook";
+import { useInfiniteScroll } from "../hooks/InfiniteScrollHook";
 import Loader from "./Loader";
 import ErrorMessage from "./ErrorMessage";
 import { properties } from "../properties";
@@ -11,6 +12,8 @@ const Breweries = ({ name, city, filter }) => {
   const url = `${properties.breweryUrl}?by_name=${name}&by_city=${city}&by_type=${filterToApply}&per_page=20`;
 
   const [data, isLoading, error] = useFetch(url);
+  const [setRef, visible] = useInfiniteScroll({ rootMargin: "300px" });
+  console.log(visible);
 
   if (isLoading) return <Loader />;
 

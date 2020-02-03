@@ -17,7 +17,9 @@ const Search = ({ onSearch }) => {
 
   const handleChange = e => {
     setName(e.target.value);
-    setSuggestions(data);
+    e.target.value.trim().length != 0
+      ? setSuggestions(data)
+      : setSuggestions([]);
   };
 
   const handleSuggestionClick = suggestion => {

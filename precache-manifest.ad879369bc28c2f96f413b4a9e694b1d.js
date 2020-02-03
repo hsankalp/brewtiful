@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1eec01b97bc58de284b5084a6cf86f48",
+    "revision": "73602577c1f6446306c7137475576a32",
     "url": "/brewtiful/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/brewtiful/static/css/2.3edd7c7a.chunk.css"
   },
   {
-    "revision": "4221298143152a8a7325",
+    "revision": "cb7ee96edfd1baa40a75",
     "url": "/brewtiful/static/css/main.78652a37.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/brewtiful/static/js/2.af318407.chunk.js.LICENSE"
   },
   {
-    "revision": "4221298143152a8a7325",
-    "url": "/brewtiful/static/js/main.da4a294a.chunk.js"
+    "revision": "cb7ee96edfd1baa40a75",
+    "url": "/brewtiful/static/js/main.678bdaa7.chunk.js"
   },
   {
     "revision": "081976637a2c28c74804",

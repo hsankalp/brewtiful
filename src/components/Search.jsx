@@ -13,7 +13,7 @@ const Search = ({ onSearch }) => {
   const nameRef = useRef("");
   const [suggestions, setSuggestions] = useState();
 
-  const searchText = useDebounce(name, 300);
+  const searchText = useDebounce(name, 500);
 
   let [data] = useFetch(
     `${properties.breweryUrl}/autocomplete?query=${searchText}`,
@@ -36,6 +36,7 @@ const Search = ({ onSearch }) => {
   let handleSubmit = e => {
     e.preventDefault();
     setSuggestions([]);
+    setName("");
     onSearch(nameRef.current.value, locationRef.current.value);
   };
 

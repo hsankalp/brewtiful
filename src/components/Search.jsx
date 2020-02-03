@@ -23,7 +23,7 @@ const Search = ({ onSearch }) => {
   };
 
   const handleSuggestionClick = suggestion => {
-    setName(suggestion);
+    onSearch(suggestion, locationRef.current.value);
     setSuggestions([]);
   };
 

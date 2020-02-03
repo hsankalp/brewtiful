@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/brewtiful/precache-manifest.076411ab198707a262873a96aedc6dcf.js"
+  "/brewtiful/precache-manifest.5050a0476c3890ac059d218081f32bc3.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -5,6 +5,8 @@ import "../styles/Brewery.css";
 import { capitalizeFirstLetter } from "../helper/utility";
 import { BreweryContext } from "../context/Context";
 import BreweryImage from "./BreweryImage";
+import WebsiteButton from "./WebsiteButton";
+import DirectionsButton from "./DirectionsButton";
 
 const Brewery = ({ brewery, index }) => {
   const { setBrewery } = useContext(BreweryContext);
@@ -67,25 +69,14 @@ const Brewery = ({ brewery, index }) => {
 
               <div className="brewery-buttons-section">
                 {brewery.website_url && (
-                  <a
-                    className="btn btn-sm btn-dark m-1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={brewery.website_url}
-                  >
-                    Website
-                  </a>
+                  <WebsiteButton url={brewery.website_url} />
                 )}
 
                 {brewery.latitude && brewery.longitude && (
-                  <a
-                    href={`https://www.google.com/maps/place/${brewery.latitude},${brewery.longitude}`}
-                    className="btn btn-sm btn-dark m-1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Directions
-                  </a>
+                  <DirectionsButton
+                    lat={brewery.latitude}
+                    long={brewery.longitude}
+                  />
                 )}
               </div>
             </div>

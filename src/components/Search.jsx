@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "../styles/Search.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useFetch } from "../hooks/FetchHook";
+import { useDebounce } from "../hooks/DebounceHook";
 import { properties } from "../properties";
 
 const Search = ({ onSearch }) => {
@@ -10,16 +10,27 @@ const Search = ({ onSearch }) => {
   const locationRef = useRef("");
   const [suggestions, setSuggestions] = useState([]);
 
-  const [data] = useFetch(
-    `${properties.breweryUrl}/autocomplete?query=${name}`,
-    name
-  );
+  const searchText = useDebounce(name, 500);
+
+  useEffect(() => {
+    fetch(`${properties.breweryUrl}/autocomplete?query=${searchText}`)
+      .then(resp => {
+        if (!resp.ok) {
+          throw Error(resp.statusText);
+        }
+        return resp.json();
+      })
+      .then(data => {
+        setSuggestions(data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [searchText]);
 
   const handleChange = e => {
     setName(e.target.value);
-    e.target.value.trim().length != 0
-      ? setSuggestions(data)
-      : setSuggestions([]);
+    e.target.value.trim().length == 0 && setSuggestions([]);
   };
 
   const handleSuggestionClick = suggestion => {

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/brewtiful/static/css/main.4fb228c7.chunk.css",
-    "main.js": "/brewtiful/static/js/main.09c3170d.chunk.js",
-    "main.js.map": "/brewtiful/static/js/main.09c3170d.chunk.js.map",
+    "main.js": "/brewtiful/static/js/main.681a94d8.chunk.js",
+    "main.js.map": "/brewtiful/static/js/main.681a94d8.chunk.js.map",
     "runtime-main.js": "/brewtiful/static/js/runtime-main.091e8359.js",
     "runtime-main.js.map": "/brewtiful/static/js/runtime-main.091e8359.js.map",
     "static/css/2.3edd7c7a.chunk.css": "/brewtiful/static/css/2.3edd7c7a.chunk.css",
     "static/js/2.af318407.chunk.js": "/brewtiful/static/js/2.af318407.chunk.js",
     "static/js/2.af318407.chunk.js.map": "/brewtiful/static/js/2.af318407.chunk.js.map",
     "index.html": "/brewtiful/index.html",
-    "precache-manifest.0bc263228e257ae643307baacdeea36d.js": "/brewtiful/precache-manifest.0bc263228e257ae643307baacdeea36d.js",
+    "precache-manifest.076411ab198707a262873a96aedc6dcf.js": "/brewtiful/precache-manifest.076411ab198707a262873a96aedc6dcf.js",
     "service-worker.js": "/brewtiful/service-worker.js",
     "static/css/2.3edd7c7a.chunk.css.map": "/brewtiful/static/css/2.3edd7c7a.chunk.css.map",
     "static/css/main.4fb228c7.chunk.css.map": "/brewtiful/static/css/main.4fb228c7.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.3edd7c7a.chunk.css",
     "static/js/2.af318407.chunk.js",
     "static/css/main.4fb228c7.chunk.css",
-    "static/js/main.09c3170d.chunk.js"
+    "static/js/main.681a94d8.chunk.js"
   ]
 }

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "adc7629d6bb8d18671b95c7ca755bf69",
+    "revision": "0e8f84c4d1c6ae1a89f6abd9e5c0f371",
     "url": "/brewtiful/index.html"
   },
   {

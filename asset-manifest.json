@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/brewtiful/static/css/main.4fb228c7.chunk.css",
-    "main.js": "/brewtiful/static/js/main.b0fbc548.chunk.js",
-    "main.js.map": "/brewtiful/static/js/main.b0fbc548.chunk.js.map",
+    "main.css": "/brewtiful/static/css/main.68d30a11.chunk.css",
+    "main.js": "/brewtiful/static/js/main.5489fd06.chunk.js",
+    "main.js.map": "/brewtiful/static/js/main.5489fd06.chunk.js.map",
     "runtime-main.js": "/brewtiful/static/js/runtime-main.091e8359.js",
     "runtime-main.js.map": "/brewtiful/static/js/runtime-main.091e8359.js.map",
     "static/css/2.3edd7c7a.chunk.css": "/brewtiful/static/css/2.3edd7c7a.chunk.css",
     "static/js/2.af318407.chunk.js": "/brewtiful/static/js/2.af318407.chunk.js",
     "static/js/2.af318407.chunk.js.map": "/brewtiful/static/js/2.af318407.chunk.js.map",
     "index.html": "/brewtiful/index.html",
-    "precache-manifest.074f1e97ce7997d953c6ebebc8d6ba01.js": "/brewtiful/precache-manifest.074f1e97ce7997d953c6ebebc8d6ba01.js",
+    "precache-manifest.b226a7c4562d5ea766dae7157fed2c65.js": "/brewtiful/precache-manifest.b226a7c4562d5ea766dae7157fed2c65.js",
     "service-worker.js": "/brewtiful/service-worker.js",
     "static/css/2.3edd7c7a.chunk.css.map": "/brewtiful/static/css/2.3edd7c7a.chunk.css.map",
-    "static/css/main.4fb228c7.chunk.css.map": "/brewtiful/static/css/main.4fb228c7.chunk.css.map",
+    "static/css/main.68d30a11.chunk.css.map": "/brewtiful/static/css/main.68d30a11.chunk.css.map",
     "static/js/2.af318407.chunk.js.LICENSE": "/brewtiful/static/js/2.af318407.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.091e8359.js",
     "static/css/2.3edd7c7a.chunk.css",
     "static/js/2.af318407.chunk.js",
-    "static/css/main.4fb228c7.chunk.css",
-    "static/js/main.b0fbc548.chunk.js"
+    "static/css/main.68d30a11.chunk.css",
+    "static/js/main.5489fd06.chunk.js"
   ]
 }

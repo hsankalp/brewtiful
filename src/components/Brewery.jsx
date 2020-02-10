@@ -15,11 +15,11 @@ const Brewery = ({ brewery, index }) => {
     <>
       {brewery && (
         <div className="card brewery-card">
-          <div className="brewery-card-section">
-            <div className="p-2">
+          <div className="d-flex brewery-card-section">
+            <div className="flex-item p-2">
               <BreweryImage id={brewery.id} />
             </div>
-            <div className="p-2">
+            <div className="flex-item p-2">
               <div className="d-flex">
                 <div className="flex-item p-1">
                   <h5>{index + 1}.</h5>

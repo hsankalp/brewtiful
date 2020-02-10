@@ -15,7 +15,7 @@
 }
 
 /* Smmall Screen */
-@media (max-width: 900px) {
+@media (max-width: 981px) {
   .brewery-card-section {
     flex-wrap: wrap;
   }

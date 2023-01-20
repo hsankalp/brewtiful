@@ -17,7 +17,7 @@ const Brewery = ({ brewery, index }) => {
         <div className="card brewery-card">
           <div className="d-flex brewery-card-section">
             <div className="flex-item p-2">
-              <BreweryImage id={brewery.id} />
+              <BreweryImage id={index} />
             </div>
             <div className="flex-item p-2">
               <div className="d-flex">

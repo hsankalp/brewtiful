@@ -8,7 +8,16 @@ import "../styles/Breweries.css";
 
 const Breweries = ({ name, city, filter }) => {
   const filterToApply = filter === "all" ? "" : filter;
-  const url = `${properties.breweryUrl}?by_name=${name}&by_city=${city}&by_type=${filterToApply}&per_page=20`;
+  let url = `${properties.breweryUrl}?per_page=20`;
+  if (name) {
+    url = url + `&by_name=${name}`;
+  }
+  if (city) {
+    url = url + `&by_city=${city}`;
+  }
+  if (filterToApply) {
+    url = url + `&by_type=${filterToApply}`;
+  }
 
   const [data, isLoading, error] = useFetch(url);
 
@@ -16,7 +25,7 @@ const Breweries = ({ name, city, filter }) => {
 
   if (error) return <ErrorMessage />;
 
-  const getBreweries = breweries => {
+  const getBreweries = (breweries) => {
     if (breweries) {
       if (breweries.length !== 0)
         return breweries.map((brewery, idx) => (
